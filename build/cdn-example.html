@@ -1,0 +1,33 @@
+<title>TippyCDNExample</title><body>
+  <div style=flex-direction:column;justify-content:center;align-items:center;height:100vh;margin:auto;display:flex id=root>
+    <div>
+      <p>
+        これはCDN経由でTippy.jsを使用する例です。下のscriptタグで必要なライブラリを読み込み、<br>
+        `tippy()`関数を使ってツールチップを作成できます。
+      </p>
+
+      <button id=myButton>My button</button>
+    </div>
+
+    <hr>
+
+    <div>
+      <p>`tippy()`関数を利用する以外にも、data-tippy-content属性を利用することもできます。</p>
+      <button data-tippy-content="My button with data attribute">My button with data attribute</button>
+    </div>
+
+    <hr>
+
+
+    <script src=https://unpkg.com/@popperjs/core@2></script>
+    <script src=https://unpkg.com/tippy.js@6></script>
+    <script>tippy("#myButton",{content:"My tooltip!"}),tippy("button");let button=document.createElement("button");button.textContent="New Button";let root=document.querySelector("div#root");root?root.appendChild(button):console.warn("No root element found to append the button."),tippy(button,{content:`
+        <p>\u{3053}\u{306E}\u{4F8B}\u{3067}\u{306F}\u{3001}JavaScript\u{3067}\u{65B0}\u{3057}\u{3044}\u{30DC}\u{30BF}\u{30F3}\u{3092}\u{4F5C}\u{6210}\u{3057}\u{3001}\u{30C4}\u{30FC}\u{30EB}\u{30C1}\u{30C3}\u{30D7}\u{3092}\u{8FFD}\u{52A0}\u{3057}\u{3066}\u{3044}\u{307E}\u{3059}\u{3002}</p>
+        <p>\u{30DC}\u{30BF}\u{30F3}\u{306B}\u{30DE}\u{30A6}\u{30B9}\u{30AA}\u{30FC}\u{30D0}\u{30FC}\u{3059}\u{308B}\u{3068}\u{3001}\u{3053}\u{306E}\u{30C4}\u{30FC}\u{30EB}\u{30C1}\u{30C3}\u{30D7}\u{304C}\u{8868}\u{793A}\u{3055}\u{308C}\u{307E}\u{3059}\u{3002}</p>
+        <p>\u{30C4}\u{30FC}\u{30EB}\u{30C1}\u{30C3}\u{30D7}\u{306E}\u{5185}\u{5BB9}\u{306F}HTML\u{3068}\u{3057}\u{3066}\u{8A18}\u{8FF0}\u{3067}\u{304D}\u{307E}\u{3059}\u{3002}</p>
+        <p>\u{3053}\u{306E}\u{3088}\u{3046}\u{306B}\u{3001}Tippy.js\u{3092}\u{4F7F}\u{3046}\u{3053}\u{3068}\u{3067}\u{3001}\u{52D5}\u{7684}\u{306B}\u{30C4}\u{30FC}\u{30EB}\u{30C1}\u{30C3}\u{30D7}\u{3092}\u{8FFD}\u{52A0}\u{3059}\u{308B}\u{3053}\u{3068}\u{304C}\u{3067}\u{304D}\u{307E}\u{3059}\u{3002}</p>
+        <p>\u{3055}\u{3089}\u{306B}\u{3001}\u{30C4}\u{30FC}\u{30EB}\u{30C1}\u{30C3}\u{30D7}\u{306E}\u{30B9}\u{30BF}\u{30A4}\u{30EB}\u{3084}\u{52D5}\u{4F5C}\u{3092}\u{30AB}\u{30B9}\u{30BF}\u{30DE}\u{30A4}\u{30BA}\u{3059}\u{308B}\u{3053}\u{3068}\u{3082}\u{53EF}\u{80FD}\u{3067}\u{3059}\u{3002}</p>
+        `,allowHTML:!0});</script>
+  </div>
+
+

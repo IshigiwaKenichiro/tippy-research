@@ -1,0 +1,33 @@
+{
+  "name": "tippy-research",
+  "version": "1.0.0",
+  "description": "【気になるライブラリ研究部】Tippy.jsを研究するプロジェクトです。",
+  "scripts": {
+    "start": "parcel src/index.html src/kintone-example.tsx --open",
+    "build": "parcel build src/index.html src/kintone-example.tsx --dist-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IshigiwaKenichiro/tippy-research.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IshigiwaKenichiro/tippy-research/issues"
+  },
+  "homepage": "https://github.com/IshigiwaKenichiro/tippy-research#readme",
+  "dependencies": {
+    "@kintone/rest-api-client": "^5.7.4",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
+    "parcel": "^2.15.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
+}

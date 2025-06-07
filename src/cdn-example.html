@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>TippyCDNExample</title>
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: auto;"
+       id="root">
+    <div>
+      <p>
+        これはCDN経由でTippy.jsを使用する例です。下のscriptタグで必要なライブラリを読み込み、<br/>
+        `tippy()`関数を使ってツールチップを作成できます。
+      </p>
+
+      <button id="myButton">My button</button>
+    </div>
+
+    <hr>
+
+    <div>
+      <p>`tippy()`関数を利用する以外にも、data-tippy-content属性を利用することもできます。</p>
+      <button data-tippy-content="My button with data attribute">My button with data attribute</button>
+    </div>
+
+    <hr>
+
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      // With the above scripts loaded, you can call `tippy()` with a CSS
+      // selector and a `content` prop:
+      tippy('#myButton', {
+        content: 'My tooltip!',
+      });
+
+      tippy("button");
+
+      const button = document.createElement('button');
+      button.textContent = 'New Button';
+
+      const root = document.querySelector('div#root');
+      if (root) {
+        root.appendChild(button);
+      } else {
+        console.warn('No root element found to append the button.');
+      }
+      tippy(button, {
+        content: `
+        <p>この例では、JavaScriptで新しいボタンを作成し、ツールチップを追加しています。</p>
+        <p>ボタンにマウスオーバーすると、このツールチップが表示されます。</p>
+        <p>ツールチップの内容はHTMLとして記述できます。</p>
+        <p>このように、Tippy.jsを使うことで、動的にツールチップを追加することができます。</p>
+        <p>さらに、ツールチップのスタイルや動作をカスタマイズすることも可能です。</p>
+        `,
+        allowHTML: true,
+      });
+    </script>
+  </div>
+</body>
+
+</html>
