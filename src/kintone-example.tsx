@@ -4,6 +4,7 @@ import "tippy.js/dist/tippy.css";
 import 'tippy.js/themes/light.css';
 import 'tippy.js/themes/material.css';
 import 'tippy.js/themes/translucent.css';
+import "./sample.css";
 
 declare const kintone: any;
 const client = new KintoneRestAPIClient();
@@ -31,7 +32,7 @@ kintone.events.on(["app.record.index.show"], async (event) => {
         content: `
             <p>ドキュメントレコードを削除します。</p>
         `,
-        theme : 'translucent',
+        theme: 'tomato',
 
         allowHTML: true,
     });
@@ -55,17 +56,17 @@ kintone.events.on(["app.record.detail.show"], async (event) => {
     for (const field of fields) {
         const elem = kintone.app.record.getFieldElement(field.code);
 
-        if (elem) {
-            tippy(elem, {
-                content: `
-<p>                
-フィールドコード: ${field.code}<br/>フィールド名: ${field.label}
-</p>
-<pre>${JSON.stringify(field, null, 2)}</pre>
+        if (null == elem) continue;
+
+        tippy(elem, {
+            content: `
+                    <p>                
+                    フィールドコード: ${field.code}<br/>フィールド名: ${field.label}
+                    </p>
+                    <pre>${JSON.stringify(field, null, 2)}</pre>
                 `,
-                allowHTML: true,
-            });
-        }
+            allowHTML: true,
+        });
 
     }
 
