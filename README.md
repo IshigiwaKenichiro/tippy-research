@@ -5,7 +5,7 @@
 https://atomiks.github.io/tippyjs
 
 # サンプル
-/build/index.html
+<a href="./build">/build</a>
 
 # QuickStart
 ```bash
