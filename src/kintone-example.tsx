@@ -1,9 +1,42 @@
 import tippy from "tippy.js";
 import { KintoneRestAPIClient } from "@kintone/rest-api-client"
 import "tippy.js/dist/tippy.css";
+import 'tippy.js/themes/light.css';
+import 'tippy.js/themes/material.css';
+import 'tippy.js/themes/translucent.css';
 
 declare const kintone: any;
 const client = new KintoneRestAPIClient();
+
+kintone.events.on(["app.record.index.show"], async (event) => {
+
+    const $$a = document.querySelector("a.recordlist-show-gaia")!;
+    const $$edit = document.querySelector("button.recordlist-edit-gaia")!;
+    const $$remove = document.querySelector("button.recordlist-remove-gaia")!;
+
+    tippy($$a, {
+        content: `
+            <p>ドキュメントレコードの詳細を表示します。</p>
+        `,
+        allowHTML: true,
+    });
+
+    tippy($$edit, {
+        content: `
+            <p>ドキュメントレコードを編集します。</p>
+        `,
+        allowHTML: true,
+    });
+    tippy($$remove, {
+        content: `
+            <p>ドキュメントレコードを削除します。</p>
+        `,
+        theme : 'translucent',
+
+        allowHTML: true,
+    });
+    return event;
+});
 
 kintone.events.on(["app.record.detail.show"], async (event) => {
 
